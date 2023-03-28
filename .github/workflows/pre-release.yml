@@ -1,0 +1,49 @@
+#
+# Copyright the original author or authors from the JHipster project.
+#
+# This file is part of the JHipster project, see https://www.jhipster.tech/
+# for more information.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+name: Pre Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        required: true
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build-and-analyse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 17
+          cache: 'maven'
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Update version
+        run: ./mvnw versions:set -DnewVersion=8.0.0-alpha-${{ steps.date.outputs.date }}${{ github.event.inputs.id }} -DprocessAllModules
+      - name: Deploy to github packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./mvnw -B clean package org.apache.maven.plugins:maven-deploy-plugin:deploy -Dgpg.skip -Dgithub
