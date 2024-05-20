@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -23,7 +23,6 @@ package tech.jhipster.config;
  * JHipster constants.
  */
 public interface JHipsterConstants {
-
     // Spring profiles for development, test and production, see https://www.jhipster.tech/profiles/
     /** Constant <code>SPRING_PROFILE_DEVELOPMENT="dev"</code> */
     String SPRING_PROFILE_DEVELOPMENT = "dev";
@@ -39,12 +38,6 @@ public interface JHipsterConstants {
     /** Spring profile used when deploying to Heroku
         Constant <code>SPRING_PROFILE_HEROKU="heroku"</code> */
     String SPRING_PROFILE_HEROKU = "heroku";
-    /** Spring profile used when deploying to Amazon ECS
-        Constant <code>SPRING_PROFILE_AWS_ECS="aws-ecs"</code> */
-    String SPRING_PROFILE_AWS_ECS = "aws-ecs";
-    /** Spring profile used when deploying to Microsoft Azure
-     Constant <code>SPRING_PROFILE_AZURE="azure"</code> */
-    String SPRING_PROFILE_AZURE = "azure";
     /** Spring profile used to enable OpenAPI doc generation
         Constant <code>SPRING_PROFILE_API_DOCS="api-docs"</code> */
     String SPRING_PROFILE_API_DOCS = "api-docs";

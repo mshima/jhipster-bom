@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,24 +19,23 @@
 
 package tech.jhipster.test;
 
-import tech.jhipster.test.LogbackRecorder.Event;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
+import static org.mockito.Mockito.mock;
+
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
-
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.catchThrowable;
-import static org.mockito.Mockito.mock;
+import tech.jhipster.test.LogbackRecorder.Event;
 
 class LogbackRecorderTest {
 
-    private static final String[] TEST_MESSAGES = {"error", "warn", "info", "debug", "trace"};
-    private static final Object[] TEST_ARGUMENTS = {null, true, 1, 2D, 3F};
+    private static final String[] TEST_MESSAGES = { "error", "warn", "info", "debug", "trace" };
+    private static final Object[] TEST_ARGUMENTS = { null, true, 1, 2D, 3F };
 
     private final Logger log = LoggerFactory.getLogger(LogbackRecorderTest.class);
     private final Marker marker = MarkerFactory.getMarker(log.getName());

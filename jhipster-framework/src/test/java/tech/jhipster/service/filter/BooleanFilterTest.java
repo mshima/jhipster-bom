@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,14 +19,13 @@
 
 package tech.jhipster.service.filter;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class BooleanFilterTest {
 
@@ -155,6 +154,8 @@ class BooleanFilterTest {
         filter.setIn(new LinkedList<>());
         filter.setNotIn(new LinkedList<>());
         String str = value.toString();
-        assertThat(filter.toString()).isEqualTo("BooleanFilter [equals=" + str + ", notEquals=" + str + ", specified=true, in=[], notIn=[]]");
+        assertThat(filter.toString()).isEqualTo(
+            "BooleanFilter [equals=" + str + ", notEquals=" + str + ", specified=true, in=[], notIn=[]]"
+        );
     }
 }

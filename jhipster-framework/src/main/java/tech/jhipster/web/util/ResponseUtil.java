@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,18 +19,16 @@
 
 package tech.jhipster.web.util;
 
+import java.util.Optional;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Optional;
-
 /**
  * Utility class for ResponseEntity creation.
  */
 public interface ResponseUtil {
-
     /**
      * Wrap the optional into a {@link org.springframework.http.ResponseEntity} with an {@link org.springframework.http.HttpStatus#OK} status, or if it's empty, it
      * returns a {@link org.springframework.http.ResponseEntity} with {@link org.springframework.http.HttpStatus#NOT_FOUND}.
@@ -53,7 +51,8 @@ public interface ResponseUtil {
      * @return response containing {@code maybeResponse} if present
      */
     static <X> ResponseEntity<X> wrapOrNotFound(Optional<X> maybeResponse, HttpHeaders header) {
-        return maybeResponse.map(response -> ResponseEntity.ok().headers(header).body(response))
+        return maybeResponse
+            .map(response -> ResponseEntity.ok().headers(header).body(response))
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 }

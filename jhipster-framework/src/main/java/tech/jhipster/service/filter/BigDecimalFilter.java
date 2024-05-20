@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -32,8 +32,7 @@ public class BigDecimalFilter extends RangeFilter<BigDecimal> {
     /**
      * <p>Constructor for BigDecimalFilter.</p>
      */
-    public BigDecimalFilter() {
-    }
+    public BigDecimalFilter() {}
 
     /**
      * <p>Constructor for BigDecimalFilter.</p>
@@ -52,5 +51,4 @@ public class BigDecimalFilter extends RangeFilter<BigDecimal> {
     public BigDecimalFilter copy() {
         return new BigDecimalFilter(this);
     }
-
 }

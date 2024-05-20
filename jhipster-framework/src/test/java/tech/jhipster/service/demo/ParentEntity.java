@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -27,6 +27,7 @@ import java.util.Set;
 
 @Entity
 public class ParentEntity extends BaseEntity {
+
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     private Set<ChildEntity> child1s = new HashSet<>();
 }

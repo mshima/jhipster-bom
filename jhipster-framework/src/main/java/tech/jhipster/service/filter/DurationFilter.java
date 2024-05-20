@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -32,8 +32,7 @@ public class DurationFilter extends RangeFilter<Duration> {
     /**
      * <p>Constructor for DurationFilter.</p>
      */
-    public DurationFilter() {
-    }
+    public DurationFilter() {}
 
     /**
      * <p>Constructor for DurationFilter.</p>
@@ -52,5 +51,4 @@ public class DurationFilter extends RangeFilter<Duration> {
     public DurationFilter copy() {
         return new DurationFilter(this);
     }
-
 }

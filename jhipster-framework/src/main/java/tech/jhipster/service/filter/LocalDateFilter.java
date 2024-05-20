@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,11 +19,10 @@
 
 package tech.jhipster.service.filter;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
-
 import java.time.LocalDate;
 import java.util.List;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * Filter class for {@link java.time.LocalDate} type attributes.
@@ -37,8 +36,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     /**
      * <p>Constructor for LocalDateFilter.</p>
      */
-    public LocalDateFilter() {
-    }
+    public LocalDateFilter() {}
 
     /**
      * <p>Constructor for LocalDateFilter.</p>
@@ -118,5 +116,4 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
         super.setLessThanOrEqual(equals);
         return this;
     }
-
 }

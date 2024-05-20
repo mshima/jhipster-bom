@@ -33,15 +33,22 @@ jobs:
   build-and-analyse:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: npm test
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: 17
           cache: 'maven'
       - name: Test with Maven
-        run: ./mvnw test --batch-mode
+        env:
+          GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
+        run: ./mvnw clean test --batch-mode
       - name: Run Sonar analysis
         if: github.repository == 'jhipster/jhipster-bom' && github.event_name == 'push'
         env:

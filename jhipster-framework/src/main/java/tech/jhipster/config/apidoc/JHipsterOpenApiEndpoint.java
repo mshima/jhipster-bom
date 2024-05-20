@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,17 +19,16 @@
 
 package tech.jhipster.config.apidoc;
 
+import static org.springdoc.core.properties.SpringDocConfigProperties.GroupConfig;
+import static org.springdoc.core.utils.Constants.DEFAULT_GROUP_NAME;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import org.springdoc.core.properties.SpringDocConfigProperties;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
 import org.springframework.boot.actuate.endpoint.web.annotation.WebEndpoint;
-
-import static org.springdoc.core.utils.Constants.DEFAULT_GROUP_NAME;
-import static org.springdoc.core.properties.SpringDocConfigProperties.GroupConfig;
 
 /**
  * <p>JHipsterOpenApiEndpoint class.</p>

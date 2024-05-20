@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -25,18 +25,16 @@ import org.springframework.lang.Nullable;
 /**
  * Interface used in the (@link ConditionBuilder) to help build literal 'value expression' of the Conditions.
  * Converters registered in the (@link DataBaseConfiguration) of the Springboot app
- * will be used for the datatype/data conversion 
+ * will be used for the datatype/data conversion
  *
  */
 public interface ColumnConverterReactive {
-	
-	/**
+    /**
      * Converts the value to the target class with the help of the {@link ConversionService}.
      * @param value to convert.
      * @param target class.
      * @param <T> the parameter for the intended type.
      * @return the value which can be constructed from the input.
      */
-	public <T> T convert(@Nullable Object value, @Nullable Class<T> target);
-
+    public <T> T convert(@Nullable Object value, @Nullable Class<T> target);
 }

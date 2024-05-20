@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -48,8 +48,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
     /**
      * <p>Constructor for Filter.</p>
      */
-    public Filter() {
-    }
+    public Filter() {}
 
     /**
      * <p>Constructor for Filter.</p>
@@ -183,11 +182,13 @@ public class Filter<FIELD_TYPE> implements Serializable {
             return false;
         }
         Filter<?> filter = (Filter<?>) o;
-        return Objects.equals(equals, filter.equals) &&
-                Objects.equals(notEquals, filter.notEquals) &&
-                Objects.equals(specified, filter.specified) &&
-                Objects.equals(in, filter.in) &&
-                Objects.equals(notIn, filter.notIn);
+        return (
+            Objects.equals(equals, filter.equals) &&
+            Objects.equals(notEquals, filter.notEquals) &&
+            Objects.equals(specified, filter.specified) &&
+            Objects.equals(in, filter.in) &&
+            Objects.equals(notIn, filter.notIn)
+        );
     }
 
     /** {@inheritDoc} */
@@ -199,13 +200,16 @@ public class Filter<FIELD_TYPE> implements Serializable {
     /** {@inheritDoc} */
     @Override
     public String toString() {
-        return getFilterName() + " ["
-                + (getEquals() != null ? "equals=" + getEquals() + ", " : "")
-                + (getNotEquals() != null ? "notEquals=" + getNotEquals() + ", " : "")
-                + (getSpecified() != null ? "specified=" + getSpecified() + ", " : "")
-                + (getIn() != null ? "in=" + getIn() + ", " : "")
-                + (getNotIn() != null ? "notIn=" + getNotIn() : "")
-                + "]";
+        return (
+            getFilterName() +
+            " [" +
+            (getEquals() != null ? "equals=" + getEquals() + ", " : "") +
+            (getNotEquals() != null ? "notEquals=" + getNotEquals() + ", " : "") +
+            (getSpecified() != null ? "specified=" + getSpecified() + ", " : "") +
+            (getIn() != null ? "in=" + getIn() + ", " : "") +
+            (getNotIn() != null ? "notIn=" + getNotIn() : "") +
+            "]"
+        );
     }
 
     /**

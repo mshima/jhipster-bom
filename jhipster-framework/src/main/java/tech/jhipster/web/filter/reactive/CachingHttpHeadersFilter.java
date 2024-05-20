@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -54,9 +54,7 @@ public class CachingHttpHeadersFilter implements WebFilter {
                 response.getHeaders().setCacheControl("max-age=" + cacheTimeToLive + ", public");
                 response.getHeaders().setPragma("cache");
                 response.getHeaders().setExpires(cacheTimeToLive + System.currentTimeMillis());
-
             })
             .then(Mono.defer(() -> chain.filter(exchange)));
     }
 }
-

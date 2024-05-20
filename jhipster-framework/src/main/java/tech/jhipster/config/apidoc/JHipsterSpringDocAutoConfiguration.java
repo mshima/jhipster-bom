@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,18 +19,17 @@
 
 package tech.jhipster.config.apidoc;
 
-import io.swagger.v3.oas.models.OpenAPI;
+import static tech.jhipster.config.JHipsterConstants.SPRING_PROFILE_API_DOCS;
 
+import io.swagger.v3.oas.models.OpenAPI;
 import org.springdoc.core.configuration.SpringDocConfiguration;
-import tech.jhipster.config.JHipsterProperties;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
-
-import static tech.jhipster.config.JHipsterConstants.SPRING_PROFILE_API_DOCS;
+import tech.jhipster.config.JHipsterProperties;
 
 /**
  * OpenAPI configuration.

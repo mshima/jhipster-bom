@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,14 +19,15 @@
 
 package tech.jhipster.service.demo;
 
+import org.springframework.data.jpa.domain.Specification;
 import tech.jhipster.service.QueryService;
 import tech.jhipster.service.filter.LongFilter;
 import tech.jhipster.service.filter.StringFilter;
-import org.springframework.data.jpa.domain.Specification;
 
 public class BaseEntityQueryService extends QueryService<BaseEntity> {
 
     static class BaseEntityCriteria {
+
         LongFilter id;
         StringFilter name;
 

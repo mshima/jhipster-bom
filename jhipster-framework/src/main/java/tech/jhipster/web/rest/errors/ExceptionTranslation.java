@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,10 +19,9 @@
 
 package tech.jhipster.web.rest.errors;
 
-import org.springframework.web.server.ServerWebExchange;
-
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 /**
@@ -31,7 +30,6 @@ import reactor.core.publisher.Mono;
  * see https://github.com/spring-projects/spring-framework/issues/22991
  */
 public interface ExceptionTranslation {
-    
     /**
      * Method to translate an Exception to ProblemDetail.
      * @param ex The exception that needs to be handled

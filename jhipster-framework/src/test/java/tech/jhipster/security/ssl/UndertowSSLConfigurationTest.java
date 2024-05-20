@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,14 +19,14 @@
 
 package tech.jhipster.security.ssl;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import io.undertow.Undertow;
 import io.undertow.UndertowOptions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.xnio.OptionMap;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 class UndertowSSLConfigurationTest {
 
@@ -45,5 +45,4 @@ class UndertowSSLConfigurationTest {
         assertThat(undertowServletWebServerFactory).isNotNull();
         assertThat(serverOptions.getMap().get(UndertowOptions.SSL_USER_CIPHER_SUITES_ORDER)).isTrue();
     }
-
 }

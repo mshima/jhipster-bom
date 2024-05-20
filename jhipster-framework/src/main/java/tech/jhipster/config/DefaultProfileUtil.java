@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author or authors from the JHipster project.
+ * Copyright 2016-2024 the original author or authors from the JHipster project.
  *
  * This file is part of the JHipster project, see https://www.jhipster.tech/
  * for more information.
@@ -19,10 +19,9 @@
 
 package tech.jhipster.config;
 
-import org.springframework.boot.SpringApplication;
-
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.boot.SpringApplication;
 
 /**
  * Utility class to load a Spring profile to be used as default
@@ -33,8 +32,7 @@ public final class DefaultProfileUtil {
 
     private static final String SPRING_PROFILE_DEFAULT = "spring.profiles.default";
 
-    private DefaultProfileUtil() {
-    }
+    private DefaultProfileUtil() {}
 
     /**
      * Set a default to use when no profile is configured.
